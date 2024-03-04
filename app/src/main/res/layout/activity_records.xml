@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gameoverbg"
+    tools:context=".RecordsActivity">
+
+
+
+    <TableLayout
+        android:id="@+id/records_TBL_records"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/table_design"
+        android:stretchColumns="1"
+        app:layout_constraintBottom_toTopOf="@+id/mapView"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="5dp"
+        tools:ignore="MissingConstraints">
+
+        <TableRow>
+            <!--titles-->
+            <TextView
+                android:fontFamily="@font/slugfestnf"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:fontFamily="@font/slugfestnf"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Player Name"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:fontFamily="@font/slugfestnf"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Score"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="400dp"
+        android:layout_height="280dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="5dp"
+        tools:ignore="MissingConstraints"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/records_TBL_records" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/slugfestnf"
+            android:text="The Hall of Fame"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/records_BTN_home"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="20dp"
+        android:text="HOME"
+        android:fontFamily="@font/slugfestnf"
+        android:textSize="15sp"
+        android:color="@color/oggycolor"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/records_TBL_records" />
+
+</RelativeLayout>

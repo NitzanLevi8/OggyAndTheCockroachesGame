@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="@integer/material_motion_duration_long_1"
+    tools:context=".GameActivity">
+
+
+    <!--......................Game Buttons Layout.............................-->
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/main_IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_LBL_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+
+        <!--left button-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/main_BTN_left"
+            android:layout_height="35dp"
+            android:layout_width="80dp"
+            android:text="@string/Left"
+            android:textSize="15sp"
+            android:fontFamily="@font/slugfestnf"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:elegantTextHeight="false"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentStart="true"/>
+
+        <!--right button-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/main_BTN_right"
+            android:layout_height="35dp"
+            android:layout_width="80dp"
+            android:text="@string/Right"
+            android:textSize="15sp"
+            android:fontFamily="@font/slugfestnf"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:elegantTextHeight="false"
+            android:layout_marginStart="210dp"
+            android:layout_alignParentStart="true"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--.................................................................-->
+        <!--......................Score Layout.............................-->
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="60dp"
+         android:gravity="left"
+         android:layout_marginStart="10dp"
+         android:layout_marginTop="10dp"
+         android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/main_TXT_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                android:fontFamily="@font/slugfestnf"
+                android:textSize="27sp"
+                android:text="000">
+            </TextView>
+     </LinearLayout>
+        <!--.................................................................-->
+        <!--......................Life Layout.............................-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_LBL_life"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_heart1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_heart2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_heart3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--.................................................................-->
+
+    <!--......................Oggy (Player) Layout.............................-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_LBL_Oggy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:weightSum="5"
+        android:orientation="horizontal">
+
+        <!--Oggy's images -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_Oggy0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/oggy"
+            />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_Oggy1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/oggy"
+            />
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_Oggy2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/oggy"
+            />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_Oggy3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/oggy"
+            />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_Oggy4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/oggy"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--.................................................................-->
+
+    <!--......................the Cockroaches' matrix.............................-->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_layout_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="560dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <!--......................0.....................-->
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/main_layout_r0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_00"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/cockroach"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_10"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_20"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_30"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_40"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_50"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_60"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <!--......................1.....................-->
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/main_layout_r1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_01"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/cockroach"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_11"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_21"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_31"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_41"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_51"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_61"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--......................2.....................-->
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/main_layout_r2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_02"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/cockroach"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_12"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_22"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_32"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_42"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_52"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_62"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--......................3.....................-->
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/main_layout_r3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_03"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/cockroach"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_13"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_23"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_33"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_43"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_53"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_63"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <!--......................4.....................-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/main_layout_r4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_04"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/cockroach"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_14"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_24"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_34"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_44"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_54"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cockroach_64"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>
